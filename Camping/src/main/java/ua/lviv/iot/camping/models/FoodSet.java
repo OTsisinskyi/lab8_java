@@ -1,12 +1,13 @@
 package ua.lviv.iot.camping.models;
 
-import ua.lviv.iot.camping.enums.enumAppointmentType;
-
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import ua.lviv.iot.camping.enums.enumAppointmentType;
 
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @ToString(callSuper = true)

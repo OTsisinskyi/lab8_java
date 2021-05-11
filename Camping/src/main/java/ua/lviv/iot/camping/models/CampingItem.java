@@ -1,14 +1,11 @@
 package ua.lviv.iot.camping.models;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 @Data
 @NoArgsConstructor
-public abstract class CampingItem {
+public class CampingItem {
     private String name;
     private String producer;
     private Integer weightInGrams;

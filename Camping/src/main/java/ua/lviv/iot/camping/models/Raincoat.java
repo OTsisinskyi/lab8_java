@@ -1,5 +1,6 @@
 package ua.lviv.iot.camping.models;
 
+import lombok.EqualsAndHashCode;
 import ua.lviv.iot.camping.enums.enumMaterialsType;
 import ua.lviv.iot.camping.enums.enumRaincoatType;
 
@@ -8,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @ToString(callSuper = true)

@@ -1,8 +1,17 @@
+ua\lviv\iot\camping\App.class
+ua\lviv\iot\camping\enums\enumSortOrder.class
 ua\lviv\iot\camping\models\SleepingBag.class
 ua\lviv\iot\camping\enums\enumMaterialThermalClothing.class
+ua\lviv\iot\camping\enums\enumAppointmentType.class
+ua\lviv\iot\camping\enums\enumViewType.class
+ua\lviv\iot\camping\manager\CampingManager.class
 ua\lviv\iot\camping\models\CampingItem.class
 ua\lviv\iot\camping\models\Raincoat.class
 ua\lviv\iot\camping\enums\enumFiller.class
+ua\lviv\iot\camping\models\FoodSet.class
 ua\lviv\iot\camping\enums\enumMaterialsType.class
+ua\lviv\iot\camping\models\Tent.class
 ua\lviv\iot\camping\enums\enumRaincoatType.class
+ua\lviv\iot\camping\models\BackPack.class
+ua\lviv\iot\camping\models\FirstAidFit.class
 ua\lviv\iot\camping\models\ThermalClothing.class
