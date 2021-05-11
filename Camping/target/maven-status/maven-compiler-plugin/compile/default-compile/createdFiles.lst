@@ -1,0 +1,8 @@
+ua\lviv\iot\camping\models\SleepingBag.class
+ua\lviv\iot\camping\enums\enumMaterialThermalClothing.class
+ua\lviv\iot\camping\models\CampingItem.class
+ua\lviv\iot\camping\models\Raincoat.class
+ua\lviv\iot\camping\enums\enumFiller.class
+ua\lviv\iot\camping\enums\enumMaterialsType.class
+ua\lviv\iot\camping\enums\enumRaincoatType.class
+ua\lviv\iot\camping\models\ThermalClothing.class
