@@ -17,12 +17,13 @@ public class Tent extends CampingItem {
     private Integer capacityOfPeople;
     private Integer squareTent;
 
-    public Tent(String name, String producer, Integer weightInGrams, Integer price, enumAppointmentType  appointmentType,
-                 Integer capacityOfPeople, Integer squareTent){
+
+    public Tent(String name, String producer, Integer weightInGrams, Integer price, enumAppointmentType appointmentType,
+                Integer capacityOfPeople, Integer squareTent) {
         super(name, producer, weightInGrams, price);
-        this.appointmentType=appointmentType;
-        this.capacityOfPeople=capacityOfPeople;
-        this.squareTent=squareTent;
+        this.appointmentType = appointmentType;
+        this.capacityOfPeople = capacityOfPeople;
+        this.squareTent = squareTent;
     }
 
 }

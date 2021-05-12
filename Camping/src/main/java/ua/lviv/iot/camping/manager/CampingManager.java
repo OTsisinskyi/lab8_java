@@ -14,16 +14,15 @@ import java.util.stream.Collectors;
 
 @Data
 @NoArgsConstructor
-public  class CampingManager {
+public class CampingManager {
     private List<CampingItem> items = new ArrayList<>();
 
-    public final void addItems(CampingItem item){
+    public final void addItems(CampingItem item) {
         this.items.add(item);
     }
 
 
-    public List<CampingItem> findItem(String name)
-    {
+    public List<CampingItem> findItem(String name) {
         return items.stream().filter(i -> i.getName().equals(name)).collect(Collectors.toList());
 
     }
@@ -46,7 +45,8 @@ public  class CampingManager {
         return items;
     }
 
-    public void printCampingItems(List<CampingItem> items){
+    public void printCampingItems(List<CampingItem> items) {
         items.forEach(System.out::println);
     }
 }
+

@@ -1,6 +1,6 @@
 package ua.lviv.iot.camping.enums;
 
-public enum enumViewType {
+public enum enumTypeOfBackpack {
     FRAME,
     FRAMPLESS
 }
