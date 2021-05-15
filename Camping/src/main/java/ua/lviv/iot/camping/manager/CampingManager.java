@@ -4,7 +4,7 @@ package ua.lviv.iot.camping.manager;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ua.lviv.iot.camping.enums.SortOrder;
-import ua.lviv.iot.camping.models.*;
+import ua.lviv.iot.camping.models.CampingItem;
 
 
 import java.util.ArrayList;

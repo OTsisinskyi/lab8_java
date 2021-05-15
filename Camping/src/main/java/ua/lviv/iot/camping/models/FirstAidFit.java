@@ -11,7 +11,7 @@ import ua.lviv.iot.camping.enums.AppointmentType;
 @Data
 @NoArgsConstructor
 @ToString(callSuper = true)
-public class FirstAidFit extends CampingItem  {
+public class FirstAidFit extends CampingItem {
     private AppointmentType appointmentType;
 
     public FirstAidFit(String name, String producer, Integer weightInGrams,

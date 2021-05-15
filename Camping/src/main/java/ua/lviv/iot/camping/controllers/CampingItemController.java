@@ -1,6 +1,5 @@
 package ua.lviv.iot.camping.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,54 +14,41 @@ import java.util.List;
 @RequestMapping(path = "/tent")
 public class CampingItemController {
 
-    @Autowired
-    private TentService tentService;
+    private final TentService tentService;
+
+    public CampingItemController(final TentService tentService) {
+        this.tentService = tentService;
+    }
 
     @GetMapping(path = "/{id}")
-    public Tent getTent(@PathVariable(name = "id")  Integer id ){
-        return  tentService.getTent(id);
+    public Tent getTent(final @PathVariable(name = "id") Integer id) {
+        return tentService.getTent(id);
     }
 
     @GetMapping
-    public List<Tent> getTents(){
-        return  tentService.getTents();
+    public List<Tent> getTents() {
+        return tentService.getTents();
 
-    }
-
-    @PutMapping
-    public Tent createTent(@RequestBody Tent tent){
-        return tentService.addTent(tent);
     }
 
     @PostMapping
-    public ResponseEntity<Tent> updateTent(@RequestBody Tent tent){
-        if(tentService.getTent(tent.getId()) != null) {
+    public Tent createTent(@RequestBody Tent tent) {
+        return tentService.addTent(tent);
+    }
+
+    @PutMapping
+    public ResponseEntity<Tent> updateTent(@RequestBody Tent tent) {
+        if (tentService.getTent(tent.getId()) != null) {
             return new ResponseEntity<>(tentService.updateTent(tent), HttpStatus.OK);
-        }else {
+        } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @DeleteMapping(path = "/{id}")
+    public Tent deleteTent(@PathVariable(name = "id") Integer id) {
+        return tentService.deleteTent(id);
+    }
 
 }
+

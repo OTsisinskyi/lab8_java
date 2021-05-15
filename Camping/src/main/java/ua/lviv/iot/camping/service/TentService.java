@@ -17,24 +17,28 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class TentService {
 
     private final AtomicInteger id = new AtomicInteger(0);
-    private final  Map<Integer, Tent> tentsMap = new HashMap<>();
+    private final Map<Integer, Tent> tentsMap = new HashMap<>();
 
-    public Tent addTent(Tent tent){
+    public Tent addTent(Tent tent) {
         Integer tentId = id.incrementAndGet();
         tent.setId(tentId);
         tentsMap.put(tentId, tent);
         return tent;
     }
 
-    public Tent updateTent(Tent tent){
+    public Tent updateTent(Tent tent) {
         return tentsMap.put(tent.getId(), tent);
     }
 
-    public List<Tent> getTents(){
+    public List<Tent> getTents() {
         return new ArrayList<>(tentsMap.values());
     }
 
     public Tent getTent(Integer id) {
         return tentsMap.get(id);
+    }
+
+    public Tent deleteTent(Integer id) {
+        return tentsMap.remove(id);
     }
 }

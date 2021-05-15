@@ -8,7 +8,7 @@ import ua.lviv.iot.camping.models.*;
 public class App {
     public static void main(String[] args) {
         CampingManager itemsManager = new CampingManager();
-        itemsManager.addItems(new Tent(1,"Tent", "Armot", 4100, 2100,
+        itemsManager.addItems(new Tent(1, "Tent", "Armot", 4100, 2100,
                 AppointmentType.GROUP, 4, 5));
         itemsManager.addItems(new BackPack("Back pack", "Terra Incognita", 2265, 3499,
                 TypeOfBackpack.FRAME, 40));
