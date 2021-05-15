@@ -1,6 +1,6 @@
 package ua.lviv.iot.camping.enums;
 
-public enum enumAppointmentType {
+public enum AppointmentType {
         PERSONAL,
         GROUP
 }

@@ -1,6 +1,6 @@
 package ua.lviv.iot.camping.enums;
 
-public enum enumSortOrder {
+public enum SortOrder {
     ASC,
     DESC
 

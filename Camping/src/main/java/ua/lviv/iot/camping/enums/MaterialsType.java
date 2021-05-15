@@ -1,6 +1,6 @@
 package ua.lviv.iot.camping.enums;
 
-public enum enumMaterialsType {
+public enum MaterialsType {
     SYNTHETIC,
     WOOL
 }
