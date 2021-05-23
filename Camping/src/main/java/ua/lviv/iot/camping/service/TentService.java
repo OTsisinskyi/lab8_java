@@ -1,44 +1,51 @@
 package ua.lviv.iot.camping.service;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.ApplicationScope;
+import ua.lviv.iot.camping.dal.TentRepository;
 import ua.lviv.iot.camping.models.Tent;
+import ua.lviv.iot.camping.myExсeptions.TentNotFoundException;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 
 
 @Service
 @ApplicationScope
-public class TentService {
+public class  TentService {
 
-    private final AtomicInteger id = new AtomicInteger(0);
-    private final Map<Integer, Tent> tentsMap = new HashMap<>();
+    private final TentRepository repository;
 
-    public Tent addTent(Tent tent) {
-        Integer tentId = id.incrementAndGet();
-        tent.setId(tentId);
-        tentsMap.put(tentId, tent);
-        return tent;
+    public TentService(TentRepository repository) {
+        this.repository = repository;
     }
 
-    public Tent updateTent(Tent tent) {
-        return tentsMap.put(tent.getId(), tent);
+    public Tent addTent(Tent tent) {
+        return repository.save(tent);
+    }
+
+    public Tent updateTent(Tent tent) throws TentNotFoundException {
+        if(repository.existsById(tent.getId())){
+            return repository.save(tent);
+        }
+        throw  new TentNotFoundException("Tent with id: " + tent.getId() + "not found");
     }
 
     public List<Tent> getTents() {
-        return new ArrayList<>(tentsMap.values());
+        return repository.findAll();
     }
 
     public Tent getTent(Integer id) {
-        return tentsMap.get(id);
+        return repository.findById(id).orElseThrow();
     }
 
     public Tent deleteTent(Integer id) {
-        return tentsMap.remove(id);
+        Tent tent = repository.findById(id).orElseThrow();
+        if (tent == null){
+            return null;
+        }
+        repository.deleteById(id);
+        return tent;
     }
 }

@@ -5,15 +5,24 @@ import lombok.*;
 
 import ua.lviv.iot.camping.enums.AppointmentType;
 
-@EqualsAndHashCode(callSuper = true)
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 @Data
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @ToString(callSuper = true)
 @NonNull
+@Entity(name = "Tent")
 public class Tent extends CampingItem {
     private AppointmentType appointmentType;
     private Integer capacityOfPeople;
     private Integer squareTent;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
 
