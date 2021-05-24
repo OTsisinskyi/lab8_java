@@ -13,7 +13,7 @@ import java.util.List;
 
 @Service
 @ApplicationScope
-public class  TentService {
+public class TentService {
 
     private final TentRepository repository;
 
@@ -26,10 +26,10 @@ public class  TentService {
     }
 
     public Tent updateTent(Tent tent) throws TentNotFoundException {
-        if(repository.existsById(tent.getId())){
+        if (repository.existsById(tent.getId())) {
             return repository.save(tent);
         }
-        throw  new TentNotFoundException("Tent with id: " + tent.getId() + "not found");
+        throw new TentNotFoundException("Tent with id: " + tent.getId() + "not found");
     }
 
     public List<Tent> getTents() {
@@ -42,7 +42,7 @@ public class  TentService {
 
     public Tent deleteTent(Integer id) {
         Tent tent = repository.findById(id).orElseThrow();
-        if (tent == null){
+        if (tent == null) {
             return null;
         }
         repository.deleteById(id);

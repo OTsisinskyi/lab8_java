@@ -71,12 +71,12 @@ public class CampingItemController {
 
     @DeleteMapping(path = "/{id}")
     public ResponseEntity<Tent> deleteTent(@PathVariable(name = "id") Integer id) {
-       try {
-           return new ResponseEntity<>(tentService.deleteTent(id), HttpStatus.OK);
-       }catch (NoSuchElementException e){
-           LOGGER.severe("Can't delete an tent with non-existing id" + id);
-           return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-       }
+        try {
+            return new ResponseEntity<>(tentService.deleteTent(id), HttpStatus.OK);
+        } catch (NoSuchElementException e) {
+            LOGGER.severe("Can't delete an tent with non-existing id" + id);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
 
     }
 }
