@@ -5,17 +5,16 @@ import lombok.*;
 
 import ua.lviv.iot.camping.enums.AppointmentType;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+
+@Entity
+@Table(name = "tent_table")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @ToString(callSuper = true)
 @NonNull
-@Entity(name = "Tent")
 public class Tent extends CampingItem {
     private AppointmentType appointmentType;
     private Integer capacityOfPeople;
@@ -26,8 +25,8 @@ public class Tent extends CampingItem {
     private Integer id;
 
 
-    public Tent(Integer id, String name, String producer, Integer weightInGrams, Integer price, AppointmentType appointmentType,
-                Integer capacityOfPeople, Integer squareTent) {
+    public Tent(Integer id, String name, String producer, Integer weightInGrams, Integer price,
+                AppointmentType appointmentType, Integer capacityOfPeople, Integer squareTent) {
         super(name, producer, weightInGrams, price);
         this.id = id;
         this.appointmentType = appointmentType;
