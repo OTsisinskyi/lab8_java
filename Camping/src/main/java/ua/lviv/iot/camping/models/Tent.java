@@ -1,29 +1,38 @@
 package ua.lviv.iot.camping.models;
 
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 
-import lombok.Data;
-import lombok.ToString;
-import ua.lviv.iot.camping.enums.enumAppointmentType;
+import ua.lviv.iot.camping.enums.AppointmentType;
 
-@EqualsAndHashCode(callSuper = true)
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "tent_table")
 @Data
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @ToString(callSuper = true)
+@NonNull
 public class Tent extends CampingItem {
-    private enumAppointmentType appointmentType;
+    private AppointmentType appointmentType;
     private Integer capacityOfPeople;
     private Integer squareTent;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-    public Tent(String name, String producer, Integer weightInGrams, Integer price, enumAppointmentType appointmentType,
-                Integer capacityOfPeople, Integer squareTent) {
+
+    public Tent(Integer id, String name, String producer, Integer weightInGrams, Integer price,
+                AppointmentType appointmentType, Integer capacityOfPeople, Integer squareTent) {
         super(name, producer, weightInGrams, price);
+        this.id = id;
         this.appointmentType = appointmentType;
         this.capacityOfPeople = capacityOfPeople;
         this.squareTent = squareTent;
+
     }
 
 }
