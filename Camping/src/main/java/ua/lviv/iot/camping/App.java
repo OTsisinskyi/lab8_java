@@ -8,36 +8,34 @@ import ua.lviv.iot.camping.models.*;
 public class App {
     public static void main(String[] args) {
         CampingManager itemsManager = new CampingManager();
-        itemsManager.addItems(new Tent("Tent", "Armot", 4100, 2100,
-                enumAppointmentType.GROUP, 4, 5));
+        itemsManager.addItems(new Tent(1, "Tent", "Armot", 4100, 2100,
+                AppointmentType.GROUP, 4, 5));
         itemsManager.addItems(new BackPack("Back pack", "Terra Incognita", 2265, 3499,
-                enumTypeOfBackpack.FRAME, 40));
+                TypeOfBackpack.FRAME, 40));
         itemsManager.addItems(new SleepingBag("Sleeping bag", "BUECHUA", 810, 1269,
-                enumFiller.FLUFF));
+                Filler.FLUFF));
         itemsManager.addItems(new FoodSet("Food set", "Food_tyt", 700, 850,
-                enumAppointmentType.GROUP, 4000, 20));
+                AppointmentType.GROUP, 4000, 20));
         itemsManager.addItems(new FirstAidFit("First aid fit", "Help_tyt", 436, 670,
-                enumAppointmentType.GROUP));
+                AppointmentType.GROUP));
         itemsManager.addItems(new Raincoat("Raincoat", "Runok", 120, 230,
-                enumRaincoatType.LONG, enumMaterialsType.SYNTHETIC));
+                RaincoatType.LONG, MaterialsType.SYNTHETIC));
         itemsManager.addItems(new ThermalClothing("Thermal clothing", "CUNISHER-STATIC", 150,
-                500, enumMaterialThermalClothing.GORTEX));
+                500, MaterialThermalClothing.GORTEX));
 
 
         System.out.println("Sort by weight...");
-        itemsManager.printCampingItems(itemsManager.sortByWeight(enumSortOrder.DESC));
+        itemsManager.printCampingItems(itemsManager.sortByWeight(SortOrder.DESC));
         System.out.println("\n");
 
 
         System.out.println("Sort by producer...");
-        itemsManager.printCampingItems(itemsManager.sortByProducer(enumSortOrder.ASC));
+        itemsManager.printCampingItems(itemsManager.sortByProducer(SortOrder.ASC));
         System.out.println("\n");
 
 
         System.out.println("Find item...");
         System.out.println(itemsManager.findItem("Raincoat"));
-
-
 
     }
 }

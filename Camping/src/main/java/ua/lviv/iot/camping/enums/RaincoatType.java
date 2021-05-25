@@ -1,6 +1,6 @@
 package ua.lviv.iot.camping.enums;
 
-public enum enumRaincoatType {
+public enum RaincoatType {
     LONG,
     SHORT
 }

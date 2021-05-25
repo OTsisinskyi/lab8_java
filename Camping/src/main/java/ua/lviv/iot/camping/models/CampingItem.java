@@ -7,15 +7,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public abstract class CampingItem {
 
-        private String name;
-        private String producer;
-        private Integer weightInGrams;
-        private Integer price;
+    private String name;
+    private String producer;
+    private Integer weightInGrams;
+    private Integer price;
 
-        public CampingItem(String name, String producer, Integer weightInGrams, Integer price) {
-            this.name = name;
-            this.producer = producer;
-            this.weightInGrams = weightInGrams;
-            this.price = price;
+    public CampingItem(String name, String producer, Integer weightInGrams, Integer price) {
+        this.name = name;
+        this.producer = producer;
+        this.weightInGrams = weightInGrams;
+        this.price = price;
     }
 }
