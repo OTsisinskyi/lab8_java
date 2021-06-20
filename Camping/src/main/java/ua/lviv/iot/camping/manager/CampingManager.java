@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 public class CampingManager {
     private CampingItemWriter campingItemWriter = new CampingItemWriter();
-    protected List<CampingItem> items = new ArrayList<>();
+    private List<CampingItem> items = new ArrayList<>();
 
     public void addItems(CampingItem item) {
         this.items.add(item);

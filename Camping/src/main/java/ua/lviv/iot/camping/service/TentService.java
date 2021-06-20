@@ -1,7 +1,5 @@
 package ua.lviv.iot.camping.service;
 
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.ApplicationScope;
 import ua.lviv.iot.camping.dal.TentRepository;

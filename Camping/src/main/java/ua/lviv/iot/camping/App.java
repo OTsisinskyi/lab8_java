@@ -1,6 +1,5 @@
 package ua.lviv.iot.camping;
 
-import net.sf.saxon.trans.SymbolicName;
 import ua.lviv.iot.camping.enums.*;
 import ua.lviv.iot.camping.manager.*;
 import ua.lviv.iot.camping.models.*;
