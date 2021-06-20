@@ -19,4 +19,12 @@ public class FirstAidFit extends CampingItem {
         super(name, producer, weightInGrams, price);
         this.appointmentType = appointmentType;
     }
+
+    public String getHeaders() {
+        return super.getHeaders() + "appointmentType";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + ", " + getAppointmentType();
+    }
 }

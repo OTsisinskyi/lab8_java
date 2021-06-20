@@ -21,9 +21,10 @@ public class CampingItemController {
     private static final Logger LOGGER = Logger.getLogger("ua.lviv.iot.camping.controllers");
 
 
-    @Autowired
+
     private final TentService tentService;
 
+    @Autowired
     public CampingItemController(final TentService tentService) {
         this.tentService = tentService;
     }
@@ -39,7 +40,7 @@ public class CampingItemController {
         try {
             return new ResponseEntity<>(tentService.getTent(id), HttpStatus.OK);
         } catch (NoSuchElementException e) {
-            LOGGER.severe("Can't update an tent with non-existing id" + id);
+            LOGGER.severe("Can't get an tent with non-existing id" + id);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
@@ -55,7 +56,7 @@ public class CampingItemController {
     }
 
     @PutMapping
-    public ResponseEntity<Tent> updateTent(@RequestBody Tent tent) throws TentNotFoundException {
+    public ResponseEntity<Tent> updateTent(@RequestBody Tent tent) {
         if (tent.getId() == null) {
             LOGGER.severe("Can't update tent without id - null value was passed instead of it");
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);

@@ -22,4 +22,12 @@ public abstract class CampingItem {
         this.weightInGrams = weightInGrams;
         this.price = price;
     }
+
+    public String getHeaders() {
+        return "name, " + "producer, " + "weightInGrams, " + "price, ";
+    }
+
+    public String toCSV() {
+        return getName() + ", " + getProducer() + ", " + getWeightInGrams() + ", " + getPrice();
+    }
 }

@@ -23,4 +23,12 @@ public class BackPack extends CampingItem {
         this.viewType = viewType;
         this.internalVolume = internalVolume;
     }
+
+    public String getHeaders() {
+        return super.getHeaders() + "viewType, " + "internalVolume";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + ", " + getViewType() + ", " + getInternalVolume();
+    }
 }

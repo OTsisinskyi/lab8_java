@@ -1,5 +1,6 @@
 package ua.lviv.iot.camping;
 
+import net.sf.saxon.trans.SymbolicName;
 import ua.lviv.iot.camping.enums.*;
 import ua.lviv.iot.camping.manager.*;
 import ua.lviv.iot.camping.models.*;
@@ -8,6 +9,7 @@ import ua.lviv.iot.camping.models.*;
 public class App {
     public static void main(String[] args) {
         CampingManager itemsManager = new CampingManager();
+
         itemsManager.addItems(new Tent(1, "Tent", "Armot", 4100, 2100,
                 AppointmentType.GROUP, 4, 5));
         itemsManager.addItems(new BackPack("Back pack", "Terra Incognita", 2265, 3499,
@@ -23,7 +25,6 @@ public class App {
         itemsManager.addItems(new ThermalClothing("Thermal clothing", "CUNISHER-STATIC", 150,
                 500, MaterialThermalClothing.GORTEX));
 
-
         System.out.println("Sort by weight...");
         itemsManager.printCampingItems(itemsManager.sortByWeight(SortOrder.DESC));
         System.out.println("\n");
@@ -36,6 +37,8 @@ public class App {
 
         System.out.println("Find item...");
         System.out.println(itemsManager.findItem("Raincoat"));
+
+        itemsManager.saveInCSVFile();
 
     }
 }

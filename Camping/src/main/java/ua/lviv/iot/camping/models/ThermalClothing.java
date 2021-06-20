@@ -21,4 +21,12 @@ public class ThermalClothing extends CampingItem {
         super(name, producer, weightInGrams, price);
         this.materialThermalClothing = materialThermalClothing;
     }
+
+    public String getHeaders() {
+        return super.getHeaders() + "materialThermalClothing";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + ", " + getMaterialThermalClothing();
+    }
 }

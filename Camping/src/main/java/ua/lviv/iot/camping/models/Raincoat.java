@@ -23,4 +23,12 @@ public class Raincoat extends CampingItem {
         this.raincoatType = raincoatType;
         this.materialsType = materialsType;
     }
+
+    public String getHeaders() {
+        return super.getHeaders() + "raincoatType, " + "materialsType";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + ", " + getRaincoatType() + ", " + getMaterialsType();
+    }
 }

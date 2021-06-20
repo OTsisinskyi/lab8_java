@@ -23,6 +23,14 @@ public class FoodSet extends CampingItem {
         this.caloricContent = caloricContent;
         this.expirationData = expirationData;
     }
+
+    public String getHeaders() {
+        return super.getHeaders() + "appointmentType, " + "caloricContent, " + "expirationData";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + ", " + getAppointmentType() + ", " + getCaloricContent() + ", " + getExpirationData();
+    }
 }
 
 

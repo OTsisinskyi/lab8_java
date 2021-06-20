@@ -19,4 +19,12 @@ public class SleepingBag extends CampingItem {
         super(name, producer, weightInGrams, price);
         this.filler = filler;
     }
+
+    public String getHeaders() {
+        return super.getHeaders() + "filler";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + ", " + getFiller();
+    }
 }

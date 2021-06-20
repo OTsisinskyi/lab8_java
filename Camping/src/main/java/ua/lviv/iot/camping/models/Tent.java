@@ -1,12 +1,9 @@
 package ua.lviv.iot.camping.models;
 
 import lombok.*;
-
-
 import ua.lviv.iot.camping.enums.AppointmentType;
 
 import javax.persistence.*;
-
 
 @Entity
 @Table(name = "tent_table")
@@ -24,7 +21,6 @@ public class Tent extends CampingItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-
     public Tent(Integer id, String name, String producer, Integer weightInGrams, Integer price,
                 AppointmentType appointmentType, Integer capacityOfPeople, Integer squareTent) {
         super(name, producer, weightInGrams, price);
@@ -32,7 +28,14 @@ public class Tent extends CampingItem {
         this.appointmentType = appointmentType;
         this.capacityOfPeople = capacityOfPeople;
         this.squareTent = squareTent;
+    }
 
+    public String getHeaders() {
+        return super.getHeaders() + "appointmentType, " + "capacityOfPeople, " + "squareTent";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + ", " + getAppointmentType() + ", " + getCapacityOfPeople() + ", " + getSquareTent();
     }
 
 }
