@@ -20,11 +20,6 @@ public class CampingManager {
         this.items.add(item);
     }
 
-    public void saveInCSVFile() {
-        String path = "CampingItemFile.scv";
-        campingItemWriter.writeToFile(items, path);
-    }
-
     public List<CampingItem> findItem(String name) {
         return items.stream().filter(i -> i.getName().equals(name)).collect(Collectors.toList());
 

@@ -10,17 +10,16 @@ import java.util.List;
 
 public class CampingItemWriter {
     public void writeToFile(List<CampingItem> list, String path) {
-        try {
+        try (FileWriter fileWriter = new FileWriter(path, true);
+             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+             PrintWriter printWriter = new PrintWriter(bufferedWriter);) {
             for (CampingItem campingItem : list) {
-                FileWriter fileWriter = new FileWriter(path, true);
-                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-                PrintWriter printWriter = new PrintWriter(bufferedWriter);
                 printWriter.println(campingItem.getHeaders());
                 printWriter.println(campingItem.toCSV());
                 printWriter.println("\n");
                 printWriter.flush();
-                printWriter.close();
             }
+            printWriter.close();
             JOptionPane.showMessageDialog(null, "Record saved");
         } catch (Exception E) {
             JOptionPane.showMessageDialog(null, "Record not saved");
