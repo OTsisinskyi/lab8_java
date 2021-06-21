@@ -1,7 +1,7 @@
 package ua.lviv.iot.camping.models;
 
 import lombok.EqualsAndHashCode;
-import ua.lviv.iot.camping.enums.enumMaterialThermalClothing;
+import ua.lviv.iot.camping.enums.MaterialThermalClothing;
 
 
 import lombok.Data;
@@ -14,11 +14,19 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class ThermalClothing extends CampingItem {
-    private enumMaterialThermalClothing materialThermalClothing;
+    private MaterialThermalClothing materialThermalClothing;
 
     public ThermalClothing(String name, String producer, Integer weightInGrams, Integer price,
-                           enumMaterialThermalClothing materialThermalClothing) {
+                           MaterialThermalClothing materialThermalClothing) {
         super(name, producer, weightInGrams, price);
         this.materialThermalClothing = materialThermalClothing;
+    }
+
+    public String getHeaders() {
+        return super.getHeaders() + "materialThermalClothing";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + ", " + getMaterialThermalClothing();
     }
 }

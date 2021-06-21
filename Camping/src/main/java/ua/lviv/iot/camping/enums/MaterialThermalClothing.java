@@ -1,6 +1,6 @@
 package ua.lviv.iot.camping.enums;
 
-public enum enumMaterialThermalClothing {
+public enum MaterialThermalClothing {
     GORTEX,
     TAYVEK
 }
